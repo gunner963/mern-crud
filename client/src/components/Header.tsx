@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-const Header = () => {
-  return (
-    <div style={{ width: '100%', textAlign: 'center' }}>
-      Header Component !!!
-    </div>
-  )
+import React from 'react'
+const style = {
+  width: '100%',
+  textAlign: 'center' as 'center'
 }
+
+const Header = () => <div style={style}>Contacts</div>
+
 export default Header
