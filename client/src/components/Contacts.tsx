@@ -1,8 +1,21 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-class Contacts extends Component {
+interface IProps {
+  contacts?: any[]
+}
+class Contacts extends Component<IProps> {
+  constructor(props: any) {
+    super(props)
+  }
   render() {
-    return <div>Contacts Component</div>
+    const { contacts } = this.props
+    console.log(contacts)
+    return <div>Contacts Component </div>
   }
 }
-export default Contacts
+const mapStateToProps = (state: any) => {
+  return { contacts: state.contacts }
+}
+
+export default connect(mapStateToProps)(Contacts)
